@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @model ProjectASP.Net.Models.User 
+<script src="~/Scripts/jquery-2.2.3.js"></script>
+<script src="~/Scripts/jquery-2.2.3.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#UserName").blur(function () {
+            var e = $("#UserName").val();
+            var url = '/Home/check';
+            
+            $.ajax({
+                type: "Post",
+                url: url,
+                data: { 'userName': e },
+                success: successfunc,
+                error: errorfunc
+            });
+            function successfunc(data) {
+ 
+               
+                        $("#la").text(data);
+
+            }
+            function errorfunc(xhr, status, err) {
+                alert('error');
+            }
+
+        });
+    });
+</script>				 
+       <div class="register_account">
+          	<div class="wrap">
+    	      <h4 class="title">Create an Account</h4>
+    		   <form  action="~/Home/Register" method="post">
+    			 <div class="col_1_of_2 span_1_of_2">
+		   			 <div> 
+                            @Html.TextBox("Name",null,new{placeHolder="Enter Name",required="true"})</div>
+		    		<div>
+                           @Html.TextBox("UserName",null,new{id = "UserName",value="" , placeHolder="Enter User Name",required="true"})<br/>
+                        <div id="div"><Label id="la"  style="font-size:10px;color:red"></label></div>
+
+                        
+		    		</div>
+                     <div>
+		    			   @Html.TextBox("Password",null,new{placeHolder="Enter Password",Style="Width:590px",required="true",Type="passowrd"})
+    			   </div>
+		    	 </div>
+		    	  <div class="col_1_of_2 span_1_of_2">	
+		    		<div>
+                        @Html.TextBox("Address",null,new{placeHolder="Enter Your Address",required="true"})
+		    		</div>
+		    		 
+		          <div>
+                      @Html.TextBox("Number",null,new{placeHolder="Enter Mobile Number",required="true"})
+		          </div>
+		          <div>
+                      @Html.TextBox("Email",null,new{placeHolder="Enter Yout Email", required="true"})
+		          </div>
+		         </div>
+		         <button class="grey">Submit</button>
+		         <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+		         <div class="clear"></div>
+		    </form>
+    	  </div> 
+        </div>
+
+          
+			  

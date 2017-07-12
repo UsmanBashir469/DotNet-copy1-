@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+			  <div class="labout span_1_of_a1">
+				<!-- start product_slider -->
+				     <ul id="etalage">
+							<li>	 
+									<img class="etalage_thumb_image" src=@ViewBag.detailData.ImageUrl />
+							</li>
+					 </ul>
+			<!-- end product_slider -->
+			</div>
+<div class="cont1 span_2_of_a1">
+				<h3 class="m_3">Product Price</h3>
+				
+				<div class="price_single">
+							   
+							  <span class="actual">@ViewBag.detailData.ProductPrice</span>
+							</div>
+				 
+				<div class="btn_form">
+				   <form action="~/OrderPlace/Index" method="post">
+					 <input type="submit" value="buy now" title="">
+				  </form>
+				</div>
+				<h3>Product Detail</h3>
+    			<p class="m_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+			<div class="clear"></div>
+     
+    

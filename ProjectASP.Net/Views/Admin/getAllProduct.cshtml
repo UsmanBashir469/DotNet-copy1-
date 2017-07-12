@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+ <div id="getData"   align = "center">
+ 
+    <table class="table">
+        <tr>
+            <th></th><th>Id</th><th>Product Name</th> <th>Product Category</th><th>Product Price</th><th>Product Quantity</th><th>Product Detail</th>
+        </tr>
+        @foreach(var i in ViewBag.listProductt){
+             <tr>
+                 <td style="text-align:center">@Html.ActionLink("Update", "UpdateProduct", "Admin", new { id = i.Id},null)</td>
+                 <td style="text-align:center">@i.Id</td>
+                 <td style="text-align:center">@i.ProductName</td>
+                  <td style="text-align:center">@i.ProductCategory</td>
+                 <td style="text-align:center">@i.ProductPrice</td>
+                 <td style="text-align:center">@i.ProductQuantity</td>
+                 <td style="text-align:center">@i.Detail</td>
+                
+             </tr>
+            
+         }
+         
+    </table>
+ 
+</div>

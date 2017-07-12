@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectASP.Net", "ProjectASP.Net\ProjectASP.Net.csproj", "{E5A6DE6F-2FAC-494C-954D-04CA9DCC921E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{7F94C79F-6A01-46DF-B0BB-1EF38D273320}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Post Mid\web\images\arrow.png = ..\..\..\Post Mid\web\images\arrow.png
+		..\..\..\Post Mid\web\images\arrow2.gif = ..\..\..\Post Mid\web\images\arrow2.gif
+		..\..\..\Post Mid\web\images\arrows.png = ..\..\..\Post Mid\web\images\arrows.png
+		..\..\..\Post Mid\web\images\arrows.psd = ..\..\..\Post Mid\web\images\arrows.psd
+		..\..\..\Post Mid\web\images\as.png = ..\..\..\Post Mid\web\images\as.png
+		..\..\..\Post Mid\web\images\b-arrow.png = ..\..\..\Post Mid\web\images\b-arrow.png
+		..\..\..\Post Mid\web\images\b_star.png = ..\..\..\Post Mid\web\images\b_star.png
+		..\..\..\Post Mid\web\images\banner1.jpg = ..\..\..\Post Mid\web\images\banner1.jpg
+		..\..\..\Post Mid\web\images\banner2.jpg = ..\..\..\Post Mid\web\images\banner2.jpg
+		..\..\..\Post Mid\web\images\border.png = ..\..\..\Post Mid\web\images\border.png
+		..\..\..\Post Mid\web\images\down_arrow.png = ..\..\..\Post Mid\web\images\down_arrow.png
+		..\..\..\Post Mid\web\images\f_icon.png = ..\..\..\Post Mid\web\images\f_icon.png
+		..\..\..\Post Mid\web\images\f_icon1.png = ..\..\..\Post Mid\web\images\f_icon1.png
+		..\..\..\Post Mid\web\images\f_icon2.png = ..\..\..\Post Mid\web\images\f_icon2.png
+		..\..\..\Post Mid\web\images\fb.psd = ..\..\..\Post Mid\web\images\fb.psd
+		..\..\..\Post Mid\web\images\g+.psd = ..\..\..\Post Mid\web\images\g+.psd
+		..\..\..\Post Mid\web\images\img-sprite.png = ..\..\..\Post Mid\web\images\img-sprite.png
+		..\..\..\Post Mid\web\images\img-sprite.psd = ..\..\..\Post Mid\web\images\img-sprite.psd
+		..\..\..\Post Mid\web\images\logo.png = ..\..\..\Post Mid\web\images\logo.png
+		..\..\..\Post Mid\web\images\logo.psd = ..\..\..\Post Mid\web\images\logo.psd
+		..\..\..\Post Mid\web\images\nav_img.jpg = ..\..\..\Post Mid\web\images\nav_img.jpg
+		..\..\..\Post Mid\web\images\nav_img1.jpg = ..\..\..\Post Mid\web\images\nav_img1.jpg
+		..\..\..\Post Mid\web\images\nav_img2.jpg = ..\..\..\Post Mid\web\images\nav_img2.jpg
+		..\..\..\Post Mid\web\images\nz.png = ..\..\..\Post Mid\web\images\nz.png
+		..\..\..\Post Mid\web\images\pic.jpg = ..\..\..\Post Mid\web\images\pic.jpg
+		..\..\..\Post Mid\web\images\pic1.jpg = ..\..\..\Post Mid\web\images\pic1.jpg
+		..\..\..\Post Mid\web\images\pic10.jpg = ..\..\..\Post Mid\web\images\pic10.jpg
+		..\..\..\Post Mid\web\images\pic11.jpg = ..\..\..\Post Mid\web\images\pic11.jpg
+		..\..\..\Post Mid\web\images\pic2.jpg = ..\..\..\Post Mid\web\images\pic2.jpg
+		..\..\..\Post Mid\web\images\pic3.jpg = ..\..\..\Post Mid\web\images\pic3.jpg
+		..\..\..\Post Mid\web\images\pic4.jpg = ..\..\..\Post Mid\web\images\pic4.jpg
+		..\..\..\Post Mid\web\images\pic5.jpg = ..\..\..\Post Mid\web\images\pic5.jpg
+		..\..\..\Post Mid\web\images\pic6.jpg = ..\..\..\Post Mid\web\images\pic6.jpg
+		..\..\..\Post Mid\web\images\pic7.jpg = ..\..\..\Post Mid\web\images\pic7.jpg
+		..\..\..\Post Mid\web\images\pic8.jpg = ..\..\..\Post Mid\web\images\pic8.jpg
+		..\..\..\Post Mid\web\images\pic9.jpg = ..\..\..\Post Mid\web\images\pic9.jpg
+		..\..\..\Post Mid\web\images\pk.png = ..\..\..\Post Mid\web\images\pk.png
+		..\..\..\Post Mid\web\images\plus.png = ..\..\..\Post Mid\web\images\plus.png
+		..\..\..\Post Mid\web\images\radius.png = ..\..\..\Post Mid\web\images\radius.png
+		..\..\..\Post Mid\web\images\radius.psd = ..\..\..\Post Mid\web\images\radius.psd
+		..\..\..\Post Mid\web\images\s_arrow.png = ..\..\..\Post Mid\web\images\s_arrow.png
+		..\..\..\Post Mid\web\images\s_arrow.psd = ..\..\..\Post Mid\web\images\s_arrow.psd
+		..\..\..\Post Mid\web\images\social.psd = ..\..\..\Post Mid\web\images\social.psd
+		..\..\..\Post Mid\web\images\srl.png = ..\..\..\Post Mid\web\images\srl.png
+		..\..\..\Post Mid\web\images\star.png = ..\..\..\Post Mid\web\images\star.png
+		..\..\..\Post Mid\web\images\star.psd = ..\..\..\Post Mid\web\images\star.psd
+		..\..\..\Post Mid\web\images\t1.jpg = ..\..\..\Post Mid\web\images\t1.jpg
+		..\..\..\Post Mid\web\images\t2.jpg = ..\..\..\Post Mid\web\images\t2.jpg
+		..\..\..\Post Mid\web\images\t3.jpg = ..\..\..\Post Mid\web\images\t3.jpg
+		..\..\..\Post Mid\web\images\t4.jpg = ..\..\..\Post Mid\web\images\t4.jpg
+		..\..\..\Post Mid\web\images\t5.jpg = ..\..\..\Post Mid\web\images\t5.jpg
+		..\..\..\Post Mid\web\images\t6.jpg = ..\..\..\Post Mid\web\images\t6.jpg
+		..\..\..\Post Mid\web\images\Thumbs.db = ..\..\..\Post Mid\web\images\Thumbs.db
+		..\..\..\Post Mid\web\images\tw.psd = ..\..\..\Post Mid\web\images\tw.psd
+		..\..\..\Post Mid\web\images\uk.png = ..\..\..\Post Mid\web\images\uk.png
+		..\..\..\Post Mid\web\images\us.png = ..\..\..\Post Mid\web\images\us.png
+		..\..\..\Post Mid\web\images\wish.png = ..\..\..\Post Mid\web\images\wish.png
+		..\..\..\Post Mid\web\images\zoom.png = ..\..\..\Post Mid\web\images\zoom.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5A6DE6F-2FAC-494C-954D-04CA9DCC921E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A6DE6F-2FAC-494C-954D-04CA9DCC921E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A6DE6F-2FAC-494C-954D-04CA9DCC921E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A6DE6F-2FAC-494C-954D-04CA9DCC921E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

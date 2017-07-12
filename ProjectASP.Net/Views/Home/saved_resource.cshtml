@@ -1,0 +1,671 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://pureuploader.hankurumsal.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Full Plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/flat-ui.css" rel="stylesheet">
+    <link href="~/Content/jquery.gritter.css" rel="stylesheet">
+    <link href="~/Content/app.css" rel="stylesheet">
+    <style>
+        input[type="file"]{
+            display:inline-block;
+        }
+    </style>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+                <![endif]-->
+</head>
+<body>
+    <div class="container">
+
+         
+        <div class="row-fluid">
+            
+
+
+<div class="col-md-3">
+    <div class="bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix well" style="padding:0;">
+            <li><a href="http://pureuploader.hankurumsal.com/#thumbnail"><i class="icon-chevron-right"></i> Thumbnail &amp; Icon</a></li>
+            <li><a href="http://pureuploader.hankurumsal.com/#resize"><i class="icon-chevron-right"></i> Image Resize &amp; Aspect Ratio</a></li>
+            <li><a href="http://pureuploader.hankurumsal.com/#watermark"><i class="icon-chevron-right"></i> Watermark Text</a></li>
+            <li><a href="http://pureuploader.hankurumsal.com/#watermark2"><i class="icon-chevron-right"></i> Watermark Image</a></li>
+            <li><a href="http://pureuploader.hankurumsal.com/#auto"><i class="icon-chevron-right"></i> Auto upload</a></li>
+
+        </ul>
+    </div>
+    <!--/.well -->
+</div>
+<div class="col-md-9">
+    <div id="thumbnail" class="well">
+        <h2>Thumbnail &amp; Icon</h2>
+        <ul class="prop">
+            <li>
+                <label for="g-Thumb" class="checkbox" style="display:inline; margin-right:3px">Thumbnail <input type="checkbox" id="g-Thumb" checked="checked" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span></label>
+            </li>
+            <li>
+                <label for="g-Icon" class="checkbox" style="display:inline; margin-right:3px">Icon <input type="checkbox" id="g-Icon" checked="checked" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span></label>
+            </li>
+        </ul>
+        <form class="row" id="dropper1">
+
+            <div style="padding-bottom: 20px">
+            </div>
+
+            <div class="row" style="margin:0;">
+                <div class="col-md-12 drop-zone" id="dropPlace1" style="padding:0 !important;">
+                </div>
+            </div>
+            <div class="row images" id="imageHolder1">
+            </div>
+            <div class="text-center">
+                <input id="fileInput1" name="fileInput" type="file" class="btn btn-file" multiple="">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-block btn-lg btn-primary" value="Start Upload">
+            </div>
+        </form>
+    </div>
+
+    <div id="resize" class="well">
+        <h2>Image Resize &amp; Aspect Ratio</h2>
+        <p>Filter : <code>jpeg|jpg|png|bmp</code> with no watermark text, image.</p>
+        <p>Resize : <code>800x600</code></p>
+        <ul class="prop row">
+            <li>
+                <div class="form-group col-md-3">
+                    <label for="g-Aspect" style="display:inline; margin-right:3px" class="checkbox">Aspect Ratio<input type="checkbox" id="g-Aspect" checked="checked" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span></label>
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Width
+                    <input class="form-control" type="text" id="resize_width" placeholder="0 for orginal size">
+                </div>
+            </li>
+
+            <li>
+                <div class="form-group col-md-3">
+                    Height
+                    <input class="form-control" type="text" id="resize_height" placeholder="0 for orginal size">
+                </div>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+        <form class="row" id="dropper2">
+            
+            <div style="padding-bottom: 20px">
+            </div>
+            <div class="row" style="margin:0;">
+                <div class="col-md-12 drop-zone" id="dropPlace2" style="padding:0 !important;">
+                </div>
+            </div>
+            <div class="row images" id="imageHolder2">
+            </div>
+            <div class="text-center">
+                <input id="fileInput2" name="fileInput" type="file" class="btn btn-file" multiple="">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-block btn-lg btn-primary" value="Start Upload">
+            </div>
+        </form>
+    </div>
+
+    <div id="watermark" class="well">
+        <h2>Watermark Text</h2>
+        <ul class="prop">
+            <li>
+                <div class="form-group col-md-3">
+                    Text
+                    <input type="text" class="form-control" id="watermarkText" placeholder="www.tqera.com">
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Color
+                    <input class="form-control" type="color" id="watermarkColor">
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Font
+                    <input class="form-control" type="text" id="watermarkFont" placeholder="bold helvetica">
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Font-Size
+                    <input class="form-control" type="text" id="watermarkFontSize" placeholder="72px">
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Alpha
+                    <input class="form-control" type="text" id="watermarkTextAlpha" placeholder="1 for no alpha">
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Poisiton
+                    <div class="select2-container form-control select select-primary" id="s2id_watermarkTextPosition"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-1">Top-Middle</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen1_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-1">   </ul></div></div><select class="form-control select select-primary select2-offscreen" data-toggle="select" id="watermarkTextPosition" tabindex="-1" title="">
+                        <option value="top mid">Top-Middle</option>
+                        <option value="top right">Top-Right</option>
+                        <option value="top left">Top-Left</option>
+                        <option value="bottom right">Bottom-Right</option>
+                        <option value="bottom left">Bottom-Left</option>
+                        <option value="bottom mid">Bottom-Middle</option>
+                        <option value="center right">Middle-Right</option>
+                        <option value="center left">Middle-Left</option>
+                        <option value="center mid">Middle-Center</option>
+                    </select>
+                </div>
+
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+        <form class="row" id="dropper3">
+
+            <div style="padding-bottom: 20px">
+            </div>
+            <div class="row" style="margin:0;">
+                <div class="col-md-12 drop-zone" id="dropPlace3" style="padding:0 !important;">
+                </div>
+            </div>
+            <div class="row images" id="imageHolder3">
+            </div>
+
+            <div class="text-center">
+                <input id="fileInput3" name="fileInput3" type="file" class="btn btn-file" style="display:inline-block !important;" multiple="">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-block btn-lg btn-primary" value="Start Upload">
+            </div>
+        </form>
+    </div>
+
+    <div id="watermark2" class="well">
+        <h2>Watermark Image</h2>
+        <ul class="prop">
+            <li>
+                <div class="form-group col-md-3 ">
+                    <label for="g-Image-Aspect" class="checkbox" style="display:inline; margin-right:3px">Watermark Image Aspect Ratio <input type="checkbox" id="g-Image-Aspect" checked="checked" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span></label>
+
+                </div>
+            </li>
+            <li>
+                <div class="form-group col-md-3">
+                    Alpha
+                    <input class="form-control" type="text" id="watermarkImageAlpha" placeholder="1 for no alpha">
+                </div>
+                
+            </li>
+            <li>
+
+                <div class="form-group col-md-3">
+                    Poisiton
+                    <div class="select2-container form-control select select-primary" id="s2id_watermarkImagePosition"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">Top-Middle</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><select class="form-control select select-primary select2-offscreen" data-toggle="select" id="watermarkImagePosition" tabindex="-1" title="">
+                        <option value="top mid">Top-Middle</option>
+                        <option value="top right">Top-Right</option>
+                        <option value="top left">Top-Left</option>
+                        <option value="bottom right">Bottom-Right</option>
+                        <option value="bottom left">Bottom-Left</option>
+                        <option value="bottom mid">Bottom-Middle</option>
+                        <option value="center right">Middle-Right</option>
+                        <option value="center left">Middle-Left</option>
+                        <option value="center mid">Middle-Center</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <form class="row" id="dropper4">
+            
+            <div style="padding-bottom: 20px">
+            </div>
+            <div class="row" style="margin:0;">
+                <div class="col-md-12 drop-zone" id="dropPlace4" style="padding:0 !important;">
+                </div>
+            </div>
+            <div class="row images" id="imageHolder4">
+            </div>
+            <div class="text-center">
+                <input id="fileInput4" name="fileInput" type="file" class="btn btn-file" multiple="">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-block btn-lg btn-primary" value="Start Upload">
+            </div>
+        </form>
+    </div>
+
+    <div id="auto" class="well">
+        <h2>Auto Upload</h2>
+        <form class="row" id="dropper5">
+            <div style="padding-bottom: 20px">
+            </div>
+
+            <div class="row" style="margin:0;">
+                <div class="col-md-12 drop-zone" id="dropPlace5" style="padding:0 !important;">
+                </div>
+            </div>
+            <div class="row images" id="imageHolder5">
+            </div>
+
+            <div class="text-center">
+                <input id="fileInput5" name="fileInput" type="file" class="btn btn-file" multiple="">
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+
+        </div>
+        <hr>
+        <div class="footer">
+            <p>
+                © tQera 2013
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/flat-ui.js"></script>
+    <script src="~/Scripts/jquery.gritter.min.js"></script>
+    <script src="~/Scripts/Pure.Uploader.js"></script>
+    
+    <script>
+        // Custom Selects
+        if ($('[data-toggle="select"]').length) {
+            $('[data-toggle="select"]').select2();
+        }
+        $('[data-toggle="checkbox"]').radiocheck();
+
+        var e_thumbnail = new PureUploader(
+            {
+                //Events
+                html5Error: html5ErrorFunc,
+                progress: uploaderProgress,
+                success: uploaderSuccess,
+                error: uploaderError,
+                //Properties
+                name: "e_thumbnail",
+                drop: true,
+                imageHolder: document.getElementById("imageHolder1"),
+                dragHoverClass: "drop_hover",
+                dropPlace: document.getElementById("dropPlace1"),
+                form: document.getElementById("dropper1"),
+                file_input: document.getElementById("fileInput1"),
+                file_class: "col-md-6 list-i",
+                file_filter: "",
+                file_size: 3000 * 1024 * 1024,
+                template:
+                    '<div class="form-group text-center">' +
+                        '<a href="javascript:void(0)" class="btn btn-danger close" onclick="{uploader}.remove(\'{id}\')">x</a>' +
+                        '{image}' +
+                    '</div>' +
+                    '<div class="form-group text-center">' +
+                        '<div class="form-group col-md-6">' +
+                            '<a href="javascript:void(0)" class="btn btn-info" onclick="{uploader}.start(\'{id}\')">Start</a>' +
+                        '</div>' +
+                        '<div class="form-group col-md-6">' +
+                            '<a href="javascript:void(0)" class="btn btn-info" onclick="{uploader}.pause(\'{id}\')">Pause</a>' +
+                        '</div>' +
+                        '<p>{file.name} - {file.size}</p>' +
+                    '</div>',
+                image: {
+                    thumb: true,
+                    thumb_width: 200,
+                    thumb_height: 200,
+                    resize_width: 0,
+                    resize_height: 0,
+                    keep_aspect_ratio: true,
+                    preparing: '~/image/preparing.png'
+                },
+                icon: {
+                    icon: true,
+                    path: "~/image/icons",
+                    _default: "~/image/_blank.png",
+                    width: 128,
+                    height: 128,
+                    extension:'.png'
+                },
+                ajax: {
+                    url: '/Home/Receive',
+                    //url: 'http://lyzerk.koding.io/handler.php',
+
+                    ///url:'https://demo-project-lyzerk.c9.io/handler.php',
+                    clearAfterUpload: true,
+                    beforeSend: function (xhr) {
+
+                    }
+                },
+                chunk: {
+                    active: true,
+                    size: 1 * 1024 * 1024
+                },
+                watermark: {
+                    watermark: false
+                },
+
+            });
+
+        var e_resize = new PureUploader(
+            {
+                //Events
+                html5Error: html5ErrorFunc,
+                progress: uploaderProgress,
+                success: uploaderSuccess,
+                error: uploaderError,
+                //Properties
+                name: "e_resize",
+                drop: true,
+                imageHolder: document.getElementById("imageHolder2"),
+                dragHoverClass: "drop_hover",
+                dropPlace: document.getElementById("dropPlace2"),
+                form: document.getElementById("dropper2"),
+                file_input: document.getElementById("fileInput2"),
+                file_class: "col-md-3 list-i",
+                file_filter: "jpeg|jpg|png|bmp",
+                image: {
+                    thumb: true,
+                    thumb_width: 200,
+                    thumb_height: 200,
+                    resize_width: 800,
+                    resize_height: 600,
+                    keep_aspect_ratio: true,
+                    preparing: '~/image/preparing.png'
+                },
+                ajax: {
+                    url: '/Home/Receive',
+                    clearAfterUpload: true
+                },
+                watermark: {
+                    watermark: false
+                },
+                chunk: {
+                    active: true,
+                    size: 1 * 1024 * 1024
+                },
+
+            });
+
+        var e_watermark1 = new PureUploader(
+            {
+                //Events
+                html5Error: html5ErrorFunc,
+                progress: uploaderProgress,
+                success: uploaderSuccess,
+                error: uploaderError,
+                //Properties
+                name: "e_watermark1",
+                drop: true,
+                imageHolder: document.getElementById("imageHolder3"),
+                dragHoverClass: "drop_hover",
+                dropPlace: document.getElementById("dropPlace3"),
+                form: document.getElementById("dropper3"),
+                file_input: document.getElementById("fileInput3"),
+                file_class: "col-md-3 list-i",
+                file_filter: "jpeg|jpg|png|bmp",
+                image: {
+                    thumb: true,
+                    thumb_width: 200,
+                    thumb_height: 200,
+                    resize_width: 0,
+                    resize_height: 0,
+                    preparing: '/Scripts/build/preparing.png'
+                },
+                ajax: {
+                    url: '/Home/Receive',
+                    clearAfterUpload: true
+                },
+                watermark: {
+                    watermark: true,
+                    image: "",
+                    image_aspect_ratio: true,
+                    text: "www.yourweb.com",
+                    color: "grey",
+                    alpha: 1,
+                    font_size: "55px",
+                    font: "bold sans-serif",
+                    position: "top mid"
+                },
+                chunk: {
+                    active: true,
+                    size: 1 * 1024 * 1024
+                },
+            });
+
+        var e_watermark2 = new PureUploader(
+            {
+                //Events
+                html5Error: html5ErrorFunc,
+                progress: uploaderProgress,
+                success: uploaderSuccess,
+                error: uploaderError,
+                //Properties
+                name: "e_watermark2",
+                drop: true,
+                imageHolder: document.getElementById("imageHolder4"),
+                dragHoverClass: "drop_hover",
+                dropPlace: document.getElementById("dropPlace4"),
+                form: document.getElementById("dropper4"),
+                file_input: document.getElementById("fileInput4"),
+                file_class: "col-md-3 list-i",
+                file_filter: "jpeg|jpg|png|bmp",
+                image: {
+                    thumb: true,
+                    thumb_width: 200,
+                    thumb_height: 200,
+                    resize_width: 0,
+                    resize_height: 0,
+                    preparing: '/Scripts/build/preparing.png'
+                },
+                ajax: {
+                    url: '/Home/Receive',
+                    clearAfterUpload: true
+                },
+                watermark: {
+                    watermark: true,
+                    image: "images/watermark.png",
+                    image_aspect_ratio: true,
+                    alpha: 0.5,
+                    position: "top mid"
+                },
+                chunk: {
+                    active: true,
+                    size: 1 * 1024 * 1024
+                },
+            });
+
+        var autoUp = new PureUploader(
+            {
+                //Events
+                html5Error: html5ErrorFunc,
+                progress: uploaderProgress,
+                success: uploaderSuccess,
+                error: uploaderError,
+                //Properties
+                name: "autoUp",
+                drop: true,
+                imageHolder: document.getElementById("imageHolder5"),
+                dragHoverClass: "drop_hover",
+                dropPlace: document.getElementById("dropPlace5"),
+                form: document.getElementById("dropper5"),
+                file_input: document.getElementById("fileInput5"),
+                file_class: "col-md-3 list-i",
+                file_filter: "",
+                image: {
+                    thumb: true,
+                    thumb_width: 200,
+                    thumb_height: 200,
+                    resize_width: 0,
+                    resize_height: 0,
+                    preparing: '/Scripts/build/preparing.png'
+                },
+                ajax: {
+                    url: '/Home/Receive',
+                    clearAfterUpload: true
+                },
+                chunk: {
+                    active: true,
+                    size: 1 * 1024 * 1024
+                },
+                auto_upload: true
+
+            });
+
+        $(function () {
+
+            //e_thumbnail
+            $('#g-Thumb').change(function () {
+                e_thumbnail.settings.image.thumb = $(this).is(":checked");
+            });
+
+            $('#g-Icon').change(function () {
+                e_thumbnail.settings.icon.icon = $(this).is(":checked");
+            });
+
+
+            //e_resize
+            $('#resize_width').change(function () {
+                e_resize.settings.image.resize_width = $(this).val();
+            });
+
+            $('#resize_height').change(function () {
+                e_resize.settings.image.resize_height = $(this).val();
+            });
+
+            $('#g-Aspect').change(function () {
+                e_thumbnail.settings.image.keep_aspect_ratio = $('#g-Aspect').is(":checked");
+            });
+
+
+            $('#watermarkText').change(function () {
+                e_watermark1.settings.watermark.text = $(this).val();
+            });
+            $('#watermarkColor').change(function () {
+                e_watermark1.settings.watermark.color = $(this).val();
+            });
+            $('#watermarkFont').change(function () {
+                e_watermark1.settings.watermark.font = $(this).val();
+            });
+            $('#watermarkFontSize').change(function () {
+                e_watermark1.settings.watermark.font_size = $(this).val();
+            });
+            $('#watermarkTextAlpha').change(function () {
+                e_watermark1.settings.watermark.alpha = $(this).val();
+            });
+            $('#watermarkTextPosition').change(function () {
+                e_watermark1.settings.watermark.position = $(this).val();
+            });
+
+            $('#watermarkImageAlpha').change(function () {
+                e_watermark2.settings.watermark.alpha = $(this).val();
+            });
+            $('#watermarkImagePosition').change(function () {
+                e_watermark2.settings.watermark.position = $(this).val();
+            });
+            $('#g-Image-Aspect').change(function () {
+                e_watermark2.settings.watermark.image_aspect_ratio = $(this).is(":checked");
+            });
+
+
+        });
+
+
+        function uploaderProgress(data) {
+            var template = document.getElementById(data.template);
+
+            if (template) {
+                var progress = document.getElementById("progress_" + data.template);
+
+                if (progress) {
+                    progress.style.width = data.percent + "%";
+                }
+                else {
+                    var div = document.createElement("div");
+                    div.className = "progress";
+
+                    progress = document.createElement("div");
+                    progress.id = "progress_" + data.template;
+                    progress.className = "progress-bar";
+                    progress.style.width = data.percent + "%";
+                    div.appendChild(progress);
+
+                    template.appendChild(div);
+                }
+            }
+
+        }
+
+        function uploaderSuccess(event) {
+            
+            $.gritter.add({
+                title: 'File Uploaded!',
+            });
+        }
+
+        function uploaderError(uploader, message, event) {
+            if (message == uploader.settings.errors.NETWORK) {
+                if (event.target.upload.template_id) {
+                    var temp = document.getElementById(event.target.upload.template_id);
+                    if (temp != null) {
+                        var p = temp.getElementsByTagName("p")[0];
+                        p.className = p.className + "file_error";
+                    }
+                }
+            }
+            else {
+                $.gritter.add({
+                    title: uploader.name,
+                    text: message
+                });
+            }
+        }
+
+        function html5ErrorFunc(uploader) {
+            uploader.settings.imageHolder.style.display = "none";
+            //document.getElementById("dropper").removeChild(imageholder);
+
+            uploader.settings.dropPlace.style.display = "none";
+            var error = document.createElement("p");
+            error.className = "text-center";
+            error.appendChild(document.createTextNode("Your browser doesn't support HTML5, we can offer you a new browser from here !"));
+            uploader.settings.form.appendChild(error);
+        }
+
+        var confirmOnPageExit = function (e) {
+            // If we haven't been passed the event get the window.event
+            e = e || window.event;
+            var uploading = e_thumbnail.isworking() | e_resize.isworking() | e_watermark1.isworking() | e_watermark2.isworking() | autoUp.isworking();
+
+            if (uploading == 1) {
+                var message = 'Any text will block the navigation and display a prompt';
+
+                // For IE6-8 and Firefox prior to version 4
+                if (e) {
+                    e.returnValue = message;
+                }
+
+                // For Chrome, Safari, IE8+ and Opera 12+
+                return message;
+            }
+            else {
+                return null;
+            }
+        };
+
+        window.onbeforeunload = confirmOnPageExit;
+    </script><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span>
+
+
+
+</body></html>
