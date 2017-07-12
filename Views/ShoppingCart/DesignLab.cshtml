@@ -1,12 +1,13 @@
-﻿@{   WebImage photo = null;
+﻿<!--{   WebImage photo = null;
     var imagePath= "";
-    WebImage photo = new WebImage(@"~\Images\Photo3.jpg");
+    WebImage photo = new WebImage("~\Images\Photo3.jpg");
+
     if(photo != null){
-        imagePath = @"images\Photo3.jpg";
+        imagePath = "images\Photo3.jpg";
         photo.AddTextWatermark("My Watermark", fontColor:"Yellow", fontFamily:
             "Arial");
-        photo.Save(@"~\" + imagePath);    }
-}
+        photo.Save("~\" + imagePath);    }
+}-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +16,10 @@
 </head>
 <body>
 <h1>Adding a Watermark to an Image</h1>
-@if(imagePath != ""){
+<!--if(imagePath != ""){
   <div class="result">
-    <img src="@imagePath" alt="Image" />
+    <img src="imagePath" alt="Image" />
   </div>
-}
+}-->
 </body>
 </html>
