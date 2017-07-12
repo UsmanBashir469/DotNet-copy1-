@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+@model ProjectASP.Net.Models.Product
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>  
+<script>
+
+    
+    function show(input,name) {
+        alert("using namespace std");
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#'+name).attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<div align = "center">
+    
+      
+<form id="contact_form" action="~/Admin/Update" method="POST" enctype="multipart/form-data">
+     @foreach(var i in ViewBag.update)
+         { 
+	 <table border="0" width="30%">
+        
+     <tr>
+        
+		<td><label for="name">Product Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label></td>
+         @{String n = i.ProductName;}
+		<td> @Html.TextBox("ProductName", n, new {  require="true",size="30"})<br /></td>
+	 </tr>
+	<tr> 
+        
+		<td><label>Product Category:&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp</label> </td>
+         @{String c = i.ProductCategory;}
+		<td>@Html.TextBox("ProductCategory", c, new {require="true",size="30"}) <br /></td>
+	 <br/></tr>
+    <tr> 
+		<td><label>Product Price:&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp</label></td> 
+         @{Double p = i.ProductPrice;}
+		<td>@Html.TextBox("ProductPrice", p, new {require="true",size="30"})<br /></td>
+	 <br/></tr>
+    <tr> 
+		<td><label>Product Quantity:&nbsp &nbsp &nbsp &nbsp</label></td> 
+          @{int q =i.ProductQuantity;}
+		<td>@Html.TextBox("ProductQuantity", q, new { require="true",size="30"})<br /></td>
+	<br/></tr>
+     <tr> 
+		<td><label>Product Detail:&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp</label> </td>
+          @{String d = i.Detail;}
+		<td>@Html.TextBox("Detail", d, new {require="true", size="30"})<br /></td>
+	 <br/></tr>
+    <tr> 
+         @{int id = i.Id;}
+        <td>@Html.TextBox("Id",id, new {size="30"})</td>
+        
+	 </tr> 
+    </table>
+    <br />
+      <div class="row" align="center">
+          <div class="col-md-3">
+              <br />
+		    <label>Front Image:</label> 
+               <div><img  src="@Url.Content(i.ImageUrl)" id="front" style="width:200px;height:200px;border:solid 1px"  /> </div> 
+		    </div>
+            <div class="col-md-3">
+          </div>
+          </div>
+     }
+	<br/><input id="submit_button" type="submit" value="Update Product" />
+</form>		
+         	</div>			

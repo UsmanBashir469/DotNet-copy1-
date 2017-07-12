@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using ProjectASP.Net.Models
+@{var total = 0.0;} 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<div align="center">
+    <table class="table" style="width:50%">
+     <thead class="thead-default">
+    <tr style="background-color:aliceblue">
+        <th></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Totlal</th>
+    </tr>
+         </thead>
+    <tbody>
+    @if(Session["cart"] != null)
+    {
+        foreach (var item in (List<Item>)Session["cart"])
+        {
+            <tr>
+                <td>@Html.ActionLink("Delete", "Delete", "ShoppingCart", new {id= item.product.Id},null)</td>
+                <td>
+                    @item.product.Id
+                </td>
+                <td>
+                    @item.product.ProductName
+                </td>
+                <td>
+                    @item.product.ProductPrice
+                </td>
+                <td>
+                    @item.quantity
+                </td>
+                <td>
+                    @{total = total + item.product.ProductPrice * item.quantity;}
+                    @(item.product.ProductPrice * item.quantity) 
+                </td>
+            </tr> 
+        }
+    }
+        </tbody>
+</table>
+<h2>Total Price: @total</h2>
+    @{Session["totalp"] = total;}
+@Html.ActionLink("Click Here for Checkout","Checkout","ShoppingCart")
+
+ </div>
+

@@ -1,0 +1,66 @@
+@{
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+@model ProjectASP.Net.Models.Product
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>  
+<script>
+
+    
+    function show(input,name) {
+        alert("using namespace std");
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#'+name).attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<div align = "center">
+    
+       
+<form id="contact_form" action="~/Admin/addProduct" method="POST" enctype="multipart/form-data">
+	 <table border="0" width="30%">
+     <tr>
+    
+   
+		<td><label for="name">Product Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label></td>
+		<td> @Html.TextBox("ProductName", null, new { placeHolder="Product Name",required="true",size="30"}) @Html.ValidationMessage("ProductName", null, new { })<br /></td>
+	 </tr>
+	<tr> 
+        
+		<td><label>Product Category:&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp</label> </td>
+		<td>@Html.TextBox("ProductCategory", null, new { placeHolder="Product Category",required="true" ,size="30"}) @Html.ValidationMessageFor(x=>x.ProductCategory)<br /></td>
+	 <br/></tr>
+    <tr> 
+		<td><label>Product Price:&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp</label></td> 
+		<td>@Html.TextBox("ProductPrice", null, new { placeHolder="Product Price",required="true",size="30"}) @Html.ValidationMessage("ProductPrice", null, new { })<br /></td>
+	 <br/></tr>
+    <tr> 
+		<td><label>Product Quantity:&nbsp &nbsp &nbsp &nbsp</label></td> 
+		<td>@Html.TextBox("ProductQuantity", null, new { placeHolder="Product Quantity",required="true" ,size="30"})<br /></td>
+	<br/></tr>
+     <tr> 
+		<td><label>Product Detail:&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp</label> </td>
+		<td>@Html.TextBox("Detail", null, new { placeHolder="Product Detail",required="true" , size="30"})<br /></td>
+	 <br/></tr>
+    <tr> 
+		<td><label>Image Name:&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp</label> </td>
+		<td>@Html.TextBox("ImageUrl", null, new { placeHolder="Image Name",required="true" , size="30"})<br /><br /></td>
+	 </tr> 
+    </table>
+    <br />
+      <div class="row">
+          <div class="col-md-3">
+              <br />
+		    <label>Front Image:</label> 
+               <div><img id="front" style="width:200px;height:200px;border:solid 1px"  /> </div> 
+            <input id="file1" class="input" name="file" type="file" style="margin-left:22px" onchange="show(this , 'front')"/><br />
+		    </div>
+            <div class="col-md-3">
+          </div>
+          </div>
+	 
+	<input id="submit_button" type="submit" value="Add Product" />
+</form>						
